@@ -4,13 +4,12 @@ class Rectangle:
         self.__height = 0
 
     def setter(self, a, b):
+        # Check if values are in allowed range.
         if (0 < a < 20) and (0 < b < 20):
-            # Check if values are in allowed range.
             self.__lenght = a
             self.__height = b
         else:
-            print("Values are out of allowed range!")
-            exit(1)
+            raise ValueError("Values out of range!")
 
     def getter(self):
         return self.__lenght, self.__height
@@ -26,7 +25,7 @@ class Rectangle:
 
 
 obj = Rectangle()
-obj.setter(10.1, 15)
+obj.setter(10.1, 21)
 print(obj.getter())
 print(obj.per())
 print(obj.area())
