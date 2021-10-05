@@ -10,7 +10,7 @@ class Rational:
                 self.__numerator = int(values[0] / divisor)
                 self.__denominator = int(values[1] / divisor)
             else:
-                raise ValueError("Only integer values allowed!")
+                raise ValueError ("Only integer values allowed!")
         else:
             self.__numerator = 1
             self.__denominator = 1
