@@ -9,8 +9,7 @@ class Rectangle:
             self.__lenght = a
             self.__height = b
         else:
-            print("Values are out of allowed range!")
-            exit(1)
+            raise ValueError("Values out of range!")
 
     def getter(self):
         return self.__lenght, self.__height
