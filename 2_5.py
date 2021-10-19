@@ -29,6 +29,9 @@ class Group:
         self.list = []
         self.students = 0
 
+    def checker(self, inp):
+        return inp.name + inp.surname in [x.name + x.surname for x in self.list]
+
     def add_student(self, inp):
         """Method for adding a student to group, no more than 20 students in a group are allowed, input should be
         a Student type instance! """
@@ -36,6 +39,8 @@ class Group:
             raise AssertionError('No more than 20 students in a group!')
         if not isinstance(inp, Student):
             raise TypeError('Input should be Student type!')
+        if self.checker(inp):
+            raise ValueError('Student with this name and surname already exists!')
         self.list.append(inp)
         self.students += 1
 
